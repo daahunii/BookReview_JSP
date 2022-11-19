@@ -57,6 +57,16 @@
             background-color: #dddddd;
         }
 
+        #br{
+            ext-align: center;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+            font-size: 50pt;
+            font-weight: bold;
+            color: mediumseagreen;
+            text-shadow: 1px 3px 3px rgb(10, 62, 0);
+        }
+
     </style>
     <script>
         function delete_ok(id){
@@ -89,7 +99,7 @@
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light" style="font-family: Trebuchet MS, Arial, Helvetica, sans-serif">Book Review</h1>
+            <h1 id="br">Book Review</h1>
             <br>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -125,7 +135,7 @@
             <c:forEach items="${list}" var="u" varStatus="status">
             <div class="col">
                 <div class="card shadow-sm">
-                        <img width="inherit" height="400px" src="${pageContext.request.contextPath}/upload/${u.getPhoto()}">
+                        <img width="inherit" height="440px" src="${pageContext.request.contextPath}/upload/${u.getPhoto()}">
                         <div class="card-body">
                         <h5>${u.getTitle()}</h5>
                         <p class="card-text" style="height: 30px; overflow: hidden;">${u.getWriter()}</p>

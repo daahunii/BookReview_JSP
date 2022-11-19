@@ -56,6 +56,27 @@
     .btn-sm:hover{
       background-color: #dddddd;
     }
+
+    .form-label{
+        font-size: large;
+        font-family: "Noto Sans Khojki";
+    }
+
+    .form-label>span{
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    #br{
+        ext-align: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-size: 50pt;
+        font-weight: bold;
+        color: mediumseagreen;
+        text-shadow: 1px 3px 3px rgb(10, 62, 0);
+    }
+
   </style>
   <script>
     function delete_ok(id){
@@ -87,20 +108,20 @@
 %>
 
 <br>
-<h1 align="center" style="font-family: 'Noto Sans Khojki'; font-weight: bold">Book Review</h1>
+<h1 align="center" id="br">Book Review</h1>
 <br>
 <div align="center" class="album py-5 bg-light">
     <input type="hidden" name="seq" value="<%=u.getSeq() %>"/>
-    <c:if test="${u.getPhoto() ne ''}"><br /><img width="420" height="233" src="${pageContext.request.contextPath}/upload/${u.getPhoto()}"></c:if>
+    <c:if test="${u.getPhoto() ne ''}"><br /><img width="430" height="600" src="${pageContext.request.contextPath}/upload/${u.getPhoto()}"></c:if>
     <br />
     <br>
-    <label class="form-label">제목 <p><%=u.getTitle() %></p></label>
+    <label class="form-label"><span>- 제목 -</span> <p class="con"><%=u.getTitle() %></p></label>
     <br />
-    <label class="form-label">저자 <p><%=u.getWriter() %></p></label>
+    <label class="form-label"><span>- 저자 -</span> <p class="con"><%=u.getWriter() %></p></label>
     <br />
-    <label class="form-label">출판사 <p><%=u.getCompany() %></p></label>
+    <label class="form-label"><span>- 출판사 -</span> <p class="con"><%=u.getCompany() %></p></label>
     <br />
-    <label class="form-label">책 내용 <p style="width: 60%"><%=u.getContent() %></p></label>
+    <label class="form-label"><span>- 책 내용 -</span> <p class="con" style="width: 60%"><%=u.getContent() %></p></label>
     <br />
 </div>
 

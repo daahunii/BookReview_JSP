@@ -54,6 +54,16 @@
         .btn-sm:hover{
             background-color: #dddddd;
         }
+
+        #br{
+            ext-align: center;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+            font-size: 50pt;
+            font-weight: bold;
+            color: mediumseagreen;
+            text-shadow: 1px 3px 3px rgb(10, 62, 0);
+        }
     </style>
 </head>
 <body>
@@ -80,7 +90,7 @@
 %>
 
 <br>
-<h1 align="center" style="font-family: 'Noto Sans Khojki'; font-weight: bold">Book Review EDIT</h1>
+<h1 align="center" id="br">EDIT</h1>
 <br>
 <div align="center" class="album py-5 bg-light">
     <form action="editpost.jsp" method="post" enctype="multipart/form-data">
