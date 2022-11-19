@@ -28,9 +28,8 @@ public class FileUpload {
             if(seq != null && !seq.equals("")) one.setSeq(Integer.parseInt(seq));
             one.setTitle(multipartRequest.getParameter("title"));
             one.setContent(multipartRequest.getParameter("content"));
-            one.setYoutuber(multipartRequest.getParameter("youtuber"));
-            one.setLink(multipartRequest.getParameter("link"));
-            one.setViews(Integer.parseInt(multipartRequest.getParameter("views")));
+            one.setWriter(multipartRequest.getParameter("writer"));
+            one.setCompany(multipartRequest.getParameter("company"));
             if(seq != null && !seq.equals("")){
                 BoardDAO dao = new BoardDAO();
                 String oldfilename = dao.getPhotoFilename(Integer.parseInt(seq));

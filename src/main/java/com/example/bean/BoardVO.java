@@ -1,21 +1,15 @@
-package com.example.bookreview.bean;
-
-import java.io.File;
+package com.example.bean;
 import java.util.Date;
 
 public class BoardVO {
     private int seq;
     private String title;
+    private String writer;
+    private String company;
     private String content;
-
-    private String youtuber;
-
-    private String link;
-
-    private int views;
-
     private Date regdate;
 
+    private int cnt;
     private String photo;
 
     public int getSeq() {
@@ -42,31 +36,14 @@ public class BoardVO {
         this.content = content;
     }
 
-    public String getYoutuber() {
-        return youtuber;
-    }
 
-    public void setYoutuber(String youtuber) {
-        this.youtuber = youtuber;
-    }
+    public String getWriter() {return writer;}
 
-    public String getLink() {
-        return link;
-    }
+    public void setWriter(String writer) {this.writer = writer;}
 
-    public void setLink(String link) {
-        this.link = link;
-    }
+    public String getCompany() {return company;}
 
-    public int getViews() {
-        return views;
-    }
-
-    public void setViews(int views) {
-        this.views = views;
-    }
-
-
+    public void setCompany(String company) {this.company = company;}
 
     public Date getRegdate() {
         return regdate;
@@ -76,17 +53,12 @@ public class BoardVO {
         this.regdate = regdate;
     }
 
+    public int getCnt() {return cnt;}
 
-    public String getImgSrc(){
-        return "http://img.youtube.com/vi/" + this.link.substring(32) + "/mqdefault.jpg";
-
-    }
-
-
+    public void setCnt(int cnt) {this.cnt = cnt;}
     public String getPhoto() {
         return photo;
     }
-
     public void setPhoto(String photo) {
         this.photo = photo;
     }

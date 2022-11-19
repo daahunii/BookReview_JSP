@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="BookReview-1.0-SNAPSHOT.war">
+    <root id="archive" name="BookReview_JSP-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="BookReview:war exploded" />
     </root>
   </artifact>

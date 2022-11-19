@@ -1,4 +1,4 @@
-package com.example.bookreview.dao;
+package com.example.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,11 +15,11 @@ public class BoardDAO {
     PreparedStatement stmt = null;
     ResultSet rs = null;
 
-    private final String BOARD_INSERT = "insert into PLAYLIST (title, content, youtuber, link, views, photo) values (?,?,?,?,?,?);";
-    private final String BOARD_UPDATE = "update PLAYLIST set title=?, content=?, youtuber=?, link=?, views=?, photo=? where seq=?";
-    private final String BOARD_DELETE = "delete from PLAYLIST  where seq=?";
-    private final String BOARD_GET = "select * from PLAYLIST  where seq=?";
-    private final String BOARD_LIST = "select * from PLAYLIST order by seq desc";
+    private final String BOARD_INSERT = "insert into BOOK (title, content, writer, company, photo) values (?,?,?,?,?);";
+    private final String BOARD_UPDATE = "update BOOK set title=?, content=?, writer=?, company=?, photo=? where seq=?";
+    private final String BOARD_DELETE = "delete from BOOK  where seq=?";
+    private final String BOARD_GET = "select * from BOOK  where seq=?";
+    private final String BOARD_LIST = "select * from BOOK order by seq desc";
 
     public int insertBoard(BoardVO vo) {
         System.out.println("===> JDBC로 insertBoard() 기능 처리");
@@ -28,10 +28,9 @@ public class BoardDAO {
             stmt = conn.prepareStatement(BOARD_INSERT);
             stmt.setString(1, vo.getTitle());
             stmt.setString(2, vo.getContent());
-            stmt.setString(3, vo.getYoutuber());
-            stmt.setString(4, vo.getLink());
-            stmt.setInt(5, vo.getViews());
-            stmt.setString(6, vo.getPhoto());
+            stmt.setString(3, vo.getWriter());
+            stmt.setString(4, vo.getCompany());
+            stmt.setString(5, vo.getPhoto());
             stmt.executeUpdate();
             return 1;
         } catch (Exception e) {
@@ -59,14 +58,13 @@ public class BoardDAO {
             stmt = conn.prepareStatement(BOARD_UPDATE);
             stmt.setString(1, vo.getTitle());
             stmt.setString(2, vo.getContent());
-            stmt.setString(3, vo.getYoutuber());
-            stmt.setString(4, vo.getLink());
-            stmt.setInt(5, vo.getViews());
-            stmt.setString(6, vo.getPhoto());
-            stmt.setInt(7, vo.getSeq());
+            stmt.setString(3, vo.getWriter());
+            stmt.setString(4, vo.getCompany());
+            stmt.setString(5, vo.getPhoto());
+            stmt.setInt(6, vo.getSeq());
 
 
-            System.out.println(vo.getTitle() + "-" + vo.getContent() + "-" + vo.getYoutuber() + "-" + vo.getLink()+"-" + vo.getViews() + "-" + vo.getSeq());
+            System.out.println(vo.getTitle() + "-" + vo.getContent() + "-" + vo.getWriter() + "-" + vo.getCompany()+"-" + "-" + vo.getSeq());
             stmt.executeUpdate();
             return 1;
 
@@ -88,9 +86,8 @@ public class BoardDAO {
                 one.setSeq(rs.getInt("seq"));
                 one.setTitle(rs.getString("title"));
                 one.setContent(rs.getString("content"));
-                one.setYoutuber(rs.getString("youtuber"));
-                one.setLink(rs.getString("link"));
-                one.setViews(rs.getInt("views"));
+                one.setWriter(rs.getString("writer"));
+                one.setCompany(rs.getString("company"));
                 one.setPhoto(rs.getString("photo"));
             }
             rs.close();
@@ -112,9 +109,8 @@ public class BoardDAO {
                 one.setSeq(rs.getInt("seq"));
                 one.setTitle(rs.getString("title"));
                 one.setContent(rs.getString("content"));
-                one.setYoutuber(rs.getString("youtuber"));
-                one.setLink(rs.getString("link"));
-                one.setViews(rs.getInt("views"));
+                one.setWriter(rs.getString("writer"));
+                one.setCompany(rs.getString("company"));
                 one.setPhoto(rs.getString("photo"));
                 list.add(one);
             }
